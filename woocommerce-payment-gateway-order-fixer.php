@@ -32,7 +32,7 @@ if ( ! defined( 'WPINC' ) ) {
 // This is the maximum priority, so it should always run last. This plugin does nothing else so this is very important.
 add_filter('woocommerce_available_payment_gateways', __NAMESPACE__ . '\fix_payment_gateway_order', PHP_INT_MAX);
 
-function bigcity_fix_payment_gateway_order(array $gateways): array {
+function fix_payment_gateway_order(array $gateways): array {
     $all_gateways = WC_Payment_Gateways::instance()->payment_gateways;
     $filtered_gateways = [];
     foreach($all_gateways as $gateway) {
